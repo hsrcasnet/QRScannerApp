@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:forms="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+    mc:Ignorable="d"
+    x:Class="QRScannerApp.Views.ScannerPage">
+
+    <StackLayout>
+        <!--  Place new controls here  -->
+        <Label
+            Text="Welcome to Xamarin.Forms!"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+
+        <forms:ZXingScannerView
+            IsScanning="{Binding IsScanning}"
+            IsAnalyzing="{Binding IsAnalyzing}"
+            Options="{Binding Options}"
+            ScanResultCommand="{Binding ScanResultCommand}" />
+    </StackLayout>
+
+</ContentPage>
