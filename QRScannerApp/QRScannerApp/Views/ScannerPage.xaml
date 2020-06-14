@@ -17,7 +17,7 @@
                 IsAnalyzing="{Binding IsAnalyzing}"
                 Options="{Binding Options}"
                 ScanResultCommand="{Binding ScanResultCommand}"
-                HeightRequest="540" />
+                HeightRequest="500" />
         </ScrollView>
         <Label
             Grid.Row="0"
