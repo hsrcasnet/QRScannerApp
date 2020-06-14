@@ -1,7 +1,7 @@
 # QRScannerApp
 Sample app for demonstrating the use of ZXing QR code scanner in a Xamarin Forms app.
 
-![](https://raw.githubusercontent.com/hsrcasnet/QRScannerApp/master/Screenshots/qr-scanner-screenshot-android.jpg "Screenshot Android"){height=200px}
+[<img src="Screenshots/qr-scanner-screenshot-android.jpg" width="200"/>](qr-scanner-screenshot-android)
 
 #### Using the app
 ScannerPage contains the ZXing control ZXingScannerView which is the canvas for drawing the camera preview. As soon as we set IsScanning to true, the camera is instructed to pump frames to ZXingScannerView. The analysis of each frame for a barcode happens after we set IsAnalyzing to true.
