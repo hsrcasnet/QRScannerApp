@@ -1,7 +1,5 @@
-﻿using System;
-using QRScannerApp.Views;
+﻿using QRScannerApp.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace QRScannerApp
 {
@@ -11,7 +9,7 @@ namespace QRScannerApp
         {
             InitializeComponent();
 
-            MainPage = new ScannerPage();
+            MainPage = new NavigationPage(new ScannerPage());
         }
 
         protected override void OnStart()
