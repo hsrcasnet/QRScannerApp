@@ -1,6 +1,8 @@
 # QRScannerApp
 Sample app for demonstrating the use of ZXing QR code scanner in a Xamarin Forms app.
 
+![](https://raw.githubusercontent.com/hsrcasnet/QRScannerApp/master/Screenshots/qr-scanner-screenshot-android.jpg "Screenshot Android"){height=200px}
+
 #### Using the app
 ScannerPage contains the ZXing control ZXingScannerView which is the canvas for drawing the camera preview. As soon as we set IsScanning to true, the camera is instructed to pump frames to ZXingScannerView. The analysis of each frame for a barcode happens after we set IsAnalyzing to true.
 Each frame is then analyzed for the configured kind(s) of barcode (see MobileBarcodeScanningOptions -> PossibleFormats). The more formats are chosen, the more time it takes to analyze each frame.
@@ -16,4 +18,4 @@ If you're still looking for a better solution, check out [Scandit barcode scanne
 - [QR Code Generator](https://www.qrcode-generator.ch/)
 - [Swiss QR Bill Generator](https://www.codecrete.net/qrbill/bill)
 
-![alt text](https://raw.githubusercontent.com/hsrcasnet/QRScannerApp/master/qr-code.png "Sample QR Code")
+![](https://raw.githubusercontent.com/hsrcasnet/QRScannerApp/master/qr-code.png "Sample QR Code")
