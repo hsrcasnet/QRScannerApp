@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace QRScannerApp.Services
 {
     public class DialogService : IDialogService
     {
-        private readonly Action<string, string, string> displayAlertDelegate;
+        private readonly Func<string, string, string, Task> displayAlertDelegate;
 
-        public DialogService(Action<string, string, string> displayAlertDelegate)
+        public DialogService(Func<string, string, string, Task> displayAlertDelegate)
         {
             this.displayAlertDelegate = displayAlertDelegate;
         }
 
-        public void ShowAlert(string title, string message, string cancel)
+        public Task ShowAlert(string title, string message, string cancel)
         {
-            Device.BeginInvokeOnMainThread(() => displayAlertDelegate(title, message, cancel));
+            return Device.InvokeOnMainThreadAsync(() => displayAlertDelegate(title, message, cancel));
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿namespace QRScannerApp.Services
+﻿using System.Threading.Tasks;
+
+namespace QRScannerApp.Services
 {
     public interface IDialogService
     {
-        void ShowAlert(string title, string message, string cancel);
+        Task ShowAlert(string title, string message, string cancel);
     }
 }
