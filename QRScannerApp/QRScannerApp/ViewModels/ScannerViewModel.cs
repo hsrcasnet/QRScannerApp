@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Windows.Input;
 using QRScannerApp.Services;
 using Xamarin.Forms;
@@ -9,13 +7,11 @@ using ZXing.Mobile;
 
 namespace QRScannerApp.ViewModels
 {
-    public class ScannerViewModel : INotifyPropertyChanged
+    public class ScannerViewModel : ViewModelBase
     {
         private bool isScanning;
         private bool isAnalyzing;
         private readonly IDialogService dialogService;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public ScannerViewModel(IDialogService dialogService)
         {
@@ -25,49 +21,48 @@ namespace QRScannerApp.ViewModels
             this.Options = new MobileBarcodeScanningOptions
             {
                 PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.QR_CODE },
-                //DelayBetweenAnalyzingFrames = 2000,
+                //DelayBetweenAnalyzingFrames = 150, // Default value: 150
+                //DelayBetweenContinuousScans = 1000, // Default value: 1000
             };
 
             this.IsScanning = true;
             this.IsAnalyzing = true;
         }
 
-        private void OnScanResult(object result)
+        private async void OnScanResult(object result)
         {
             this.IsAnalyzing = false;
             this.IsScanning = false;
 
-            dialogService.ShowAlert("Barcode found", $"{result}", "OK, cool");
+            await this.dialogService.ShowAlert("Barcode found", $"{result}", "OK cool");
+
+            this.IsAnalyzing = true;
+            this.IsScanning = true;
         }
 
         public bool IsScanning
         {
-            get => isScanning;
+            get => this.isScanning;
             private set
             {
-                isScanning = value;
-                OnPropertyChanged(nameof(IsScanning));
+                this.isScanning = value;
+                this.OnPropertyChanged(nameof(this.IsScanning));
             }
         }
 
 
         public bool IsAnalyzing
         {
-            get => isAnalyzing;
+            get => this.isAnalyzing;
             private set
             {
-                isAnalyzing = value;
-                OnPropertyChanged(nameof(IsAnalyzing));
+                this.isAnalyzing = value;
+                this.OnPropertyChanged(nameof(IsAnalyzing));
             }
         }
 
         public ICommand ScanResultCommand { get; set; }
 
         public MobileBarcodeScanningOptions Options { get; }
-
-        private void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
