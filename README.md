@@ -14,8 +14,8 @@ There are parameters in MobileBarcodeScanningOptions which can be used to tune t
 If you're still looking for a better solution, check out [Scandit barcode scanner SDK](https://www.scandit.com/products/barcode-scanning/).
 
 #### Generating QR codes
-- [QR Code Monkey](https://www.qrcode-monkey.com/){:target="_blank"}
-- [QR Code Generator](https://www.qrcode-generator.ch/){:target="_blank"}
-- [Swiss QR Bill Generator](https://www.codecrete.net/qrbill/bill){:target="_blank"}
+- [QR Code Monkey](https://www.qrcode-monkey.com/)
+- [QR Code Generator](https://www.qrcode-generator.ch/)
+- [Swiss QR Bill Generator](https://www.codecrete.net/qrbill/bill)
 
 [<img src="qr-code.png"/>](qr-code.png)
