@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using QRScannerApp.Services;
 using Xamarin.Forms;
@@ -21,6 +22,7 @@ namespace QRScannerApp.ViewModels
             this.Options = new MobileBarcodeScanningOptions
             {
                 PossibleFormats = new List<BarcodeFormat> { BarcodeFormat.QR_CODE },
+                //CameraResolutionSelector = (r) => this.CameraResolutionSelector(r),
                 //DelayBetweenAnalyzingFrames = 150, // Default value: 150
                 //DelayBetweenContinuousScans = 1000, // Default value: 1000
             };
